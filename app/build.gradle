@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('D:\\00000\\stock_wiki_exports\\new_storekey.jks')
+            storePassword '123456'
+            keyAlias 'mellow'
+            keyPassword '123456'
+        }
+    }
+    compileSdkVersion 34
+
+    defaultConfig {
+        applicationId "a.gautham.statusdownloader"
+        minSdkVersion 24
+        //noinspection EditedTargetSdkVersion
+        targetSdkVersion 36
+        versionCode 1
+        versionName "1.0"
+        Date date = new Date()
+        String d = date.format('_ddMMYYYY')
+        setProperty("archivesBaseName", "WhatsApp_Status_Downloader_v$versionName$d")
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    namespace 'a.gautham.statusdownloader'
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.preference:preference:1.2.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.gms:play-services-ads:22.6.0'
+
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.github.GauthamAsir:AppUpdater:1.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+
+    implementation("com.google.android.gms:play-services-ads:24.9.0")
+
+}
