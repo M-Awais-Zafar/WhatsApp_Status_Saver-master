@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="a.status.downloader.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         app:adSize="BANNER"
         android:layout_below="@+id/appBarLayout"
-        app:adUnitId="ca-app-pub-3940256099942544/9214589741"/>
+        app:adUnitId="@string/banner_id"/>
 
 
     <androidx.viewpager.widget.ViewPager

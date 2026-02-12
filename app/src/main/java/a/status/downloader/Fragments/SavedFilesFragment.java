@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader.Fragments;
+package a.status.downloader.Fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -24,10 +24,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import a.gautham.statusdownloader.Adapter.FilesAdapter;
-import a.gautham.statusdownloader.Models.Status;
-import a.gautham.statusdownloader.R;
-import a.gautham.statusdownloader.Utils.Common;
+import a.status.downloader.Adapter.FilesAdapter;
+import a.status.downloader.Models.Status;
+import a.status.downloader.R;
+import a.status.downloader.Utils.Common;
 
 public class SavedFilesFragment extends Fragment {
 
@@ -130,7 +130,7 @@ public class SavedFilesFragment extends Fragment {
     }
 
 //    private Bitmap getThumbnail(Status status) {
-//        return a.gautham.statusdownloader.Utils.ThumbnailUtils.createVideoThumbnail(status.getFile().getAbsolutePath(),
+//        return a.status.downloader.Utils.ThumbnailUtils.createVideoThumbnail(status.getFile().getAbsolutePath(),
 //                3);
 //    }
 }

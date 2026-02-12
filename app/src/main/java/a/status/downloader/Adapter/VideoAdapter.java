@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader.Adapter;
+package a.status.downloader.Adapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -32,9 +32,9 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import java.util.List;
 import java.util.Objects;
 
-import a.gautham.statusdownloader.Models.Status;
-import a.gautham.statusdownloader.R;
-import a.gautham.statusdownloader.Utils.Common;
+import a.status.downloader.Models.Status;
+import a.status.downloader.R;
+import a.status.downloader.Utils.Common;
 
 public class VideoAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
@@ -237,7 +237,7 @@ public class VideoAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
         RewardedAd.load(
                 context,
-                "ca-app-pub-3940256099942544/5224354917",
+                context.getString(R.string.rewarded_id),
                 adRequest,
                 new RewardedAdLoadCallback() {
 
@@ -263,7 +263,7 @@ public class VideoAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
         InterstitialAd.load(
                 context,
-                "ca-app-pub-3940256099942544/1033173712",
+                context.getString(R.string.interstitial_id),
                 adRequest,
                 new InterstitialAdLoadCallback() {
 
@@ -303,7 +303,7 @@ public class VideoAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
 
 
-//package a.gautham.statusdownloader.Adapter;
+//package a.status.downloader.Adapter;
 //
 //import android.app.AlertDialog;
 //import android.content.Context;
@@ -327,9 +327,9 @@ public class VideoAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 //
 //import java.util.List;
 //
-//import a.gautham.statusdownloader.Models.Status;
-//import a.gautham.statusdownloader.R;
-//import a.gautham.statusdownloader.Utils.Common;
+//import a.Models.statusdownloader.status.Status;
+//import a.status.downloader.R;
+//import a.Utils.statusdownloader.status.Common;
 //
 //public class VideoAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 //

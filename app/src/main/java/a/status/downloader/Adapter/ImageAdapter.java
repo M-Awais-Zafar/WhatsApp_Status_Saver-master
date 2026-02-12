@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader.Adapter;
+package a.status.downloader.Adapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,7 +16,6 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
@@ -24,16 +23,15 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import java.util.List;
 import java.util.Objects;
 
-import a.gautham.statusdownloader.Models.Status;
-import a.gautham.statusdownloader.R;
-import a.gautham.statusdownloader.Utils.Common;
+import a.status.downloader.Models.Status;
+import a.status.downloader.R;
+import a.status.downloader.Utils.Common;
 
 public class ImageAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
@@ -233,7 +231,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
         RewardedAd.load(
                 context,
-                "ca-app-pub-3940256099942544/5224354917", // TEST Rewarded ID
+                context.getString(R.string.rewarded_id), // TEST Rewarded ID
                 adRequest,
                 new RewardedAdLoadCallback() {
 
@@ -260,7 +258,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
         InterstitialAd.load(
                 context,
-                "ca-app-pub-3940256099942544/1033173712", // TEST Interstitial ID
+                context.getString(R.string.interstitial_id), // TEST Interstitial ID
                 adRequest,
                 new InterstitialAdLoadCallback() {
 
@@ -308,7 +306,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
 
 
-//package a.gautham.statusdownloader.Adapter;
+//package a.status.downloader.Adapter;
 //
 //import android.app.AlertDialog;
 //import android.content.Context;
@@ -337,9 +335,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 //import java.util.List;
 //import java.util.Objects;
 //
-//import a.gautham.statusdownloader.Models.Status;
-//import a.gautham.statusdownloader.R;
-//import a.gautham.statusdownloader.Utils.Common;
+//import a.Models.statusdownloader.status.Status;
+//import a.status.downloader.R;
+//import a.Utils.statusdownloader.status.Common;
 //
 //public class ImageAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 //

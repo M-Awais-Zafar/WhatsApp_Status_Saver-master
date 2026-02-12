@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader;
+package a.status.downloader;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;

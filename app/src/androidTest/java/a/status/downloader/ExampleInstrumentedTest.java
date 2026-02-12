@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader;
+package a.status.downloader;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("a.gautham.statusdownloader", appContext.getPackageName());
+        assertEquals("a.status.downloader", appContext.getPackageName());
     }
 }

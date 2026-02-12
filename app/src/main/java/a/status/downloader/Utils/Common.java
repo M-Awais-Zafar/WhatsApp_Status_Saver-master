@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader.Utils;
+package a.status.downloader.Utils;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
@@ -31,8 +31,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 
-import a.gautham.statusdownloader.Models.Status;
-import a.gautham.statusdownloader.R;
+import a.status.downloader.Models.Status;
+import a.status.downloader.R;
 
 public class Common {
     public static final int GRID_COUNT = 2;
@@ -68,7 +68,7 @@ public class Common {
 
         try {
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (status.isApi30()) {
 
                 ContentValues values = new ContentValues();
 
@@ -80,22 +80,26 @@ public class Common {
 
                 Uri collectionUri;
                 if (status.isVideo()) {
-                    values.put(MediaStore.MediaColumns.MIME_TYPE, "video/*");
+                    values.put(MediaStore.MediaColumns.MIME_TYPE, "video/mp4");
                     collectionUri = MediaStore.Video.Media.getContentUri(
                             MediaStore.VOLUME_EXTERNAL_PRIMARY);
                 } else {
-                    values.put(MediaStore.MediaColumns.MIME_TYPE, "image/*");
+                    values.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
                     collectionUri = MediaStore.Images.Media.getContentUri(
                             MediaStore.VOLUME_EXTERNAL_PRIMARY);
                 }
 
                 destinationUri = context.getContentResolver().insert(collectionUri, values);
 
-                InputStream inputStream = context.getContentResolver().openInputStream(status.getDocumentFile().getUri());
-                OutputStream outputStream = context.getContentResolver().openOutputStream(destinationUri);
-                IOUtils.copy(inputStream, outputStream);
-
-                showNotification(context, container, status, fileName, destinationUri);
+                if (destinationUri != null) {
+                    try (InputStream inputStream = context.getContentResolver().openInputStream(status.getDocumentFile().getUri());
+                         OutputStream outputStream = context.getContentResolver().openOutputStream(destinationUri)) {
+                        if (inputStream != null && outputStream != null) {
+                            IOUtils.copy(inputStream, outputStream);
+                        }
+                    }
+                    showNotification(context, container, status, fileName, destinationUri);
+                }
 
             } else {
                 org.apache.commons.io.FileUtils.copyFile(status.getFile(), destFile);
@@ -103,7 +107,7 @@ public class Common {
                 destFile.setLastModified(System.currentTimeMillis());
                 new SingleMediaScanner(context, file);
 
-                Uri data = FileProvider.getUriForFile(context, "a.gautham.statusdownloader.provider",
+                Uri data = FileProvider.getUriForFile(context, "a.status.downloader.provider",
                         new File(destFile.getAbsolutePath()));
 
                 showNotification(context, container, status, fileName, data);
@@ -111,6 +115,7 @@ public class Common {
 
         } catch (IOException e) {
             e.printStackTrace();
+            Snackbar.make(container, "Failed to save: " + e.getMessage(), Snackbar.LENGTH_SHORT).show();
         }
 
     }
@@ -148,7 +153,7 @@ public class Common {
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+        if (status.isApi30())
             notification.setContentText("File Saved to " +
                     Environment.DIRECTORY_DCIM + "/status_saver");
         else
@@ -160,7 +165,7 @@ public class Common {
         assert notificationManager != null;
         notificationManager.notify(new Random().nextInt(), notification.build());
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q)
+        if (!status.isApi30())
             Snackbar.make(container, "Saved to " + Common.APP_DIR, Snackbar.LENGTH_LONG).show();
         else
             Snackbar.make(container, "Saved to " + Environment.DIRECTORY_DCIM + "/status_saver",

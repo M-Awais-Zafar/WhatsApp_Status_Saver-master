@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader.Utils;
+package a.status.downloader.Utils;
 
 import android.content.Context;
 import android.media.MediaScannerConnection;

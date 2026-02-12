@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader.Adapter;
+package a.status.downloader.Adapter;
 
 import android.view.View;
 import android.widget.ImageButton;
@@ -7,9 +7,9 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import a.gautham.statusdownloader.R;
+import a.status.downloader.R;
 
-public class ItemViewHolder extends RecyclerView.ViewHolder{
+public class ItemViewHolder extends RecyclerView.ViewHolder {
 
     public ImageButton save, share;
     public ImageView imageView;

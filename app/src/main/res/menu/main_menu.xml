@@ -10,26 +10,9 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/menu_rateUs"
-        android:title="@string/rate_us"
-        android:icon="@drawable/ic_star_border"
-        app:showAsAction="never" />
-
-    <item
         android:id="@+id/menu_share"
         android:title="@string/share_app"
         android:icon="@drawable/ic_share"
         app:showAsAction="never" />
-
-    <item android:id="@+id/menu_privacyPolicy"
-        android:title="@string/privacy_policy"
-        android:icon="@drawable/ic_security"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu_aboutUs"
-        android:title="@string/about_us"
-        android:icon="@drawable/ic_info_outline"
-        android:checked="false"
-        app:showAsAction="never"/>
 
 </menu>

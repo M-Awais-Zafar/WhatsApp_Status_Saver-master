@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader;
+package a.status.downloader;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -38,8 +38,8 @@ import java.util.concurrent.Executors;
 
 import a.gautham.library.AppUpdater;
 import a.gautham.library.helper.Display;
-import a.gautham.statusdownloader.Adapter.PageAdapter;
-import a.gautham.statusdownloader.Utils.Common;
+import a.status.downloader.Adapter.PageAdapter;
+import a.status.downloader.Utils.Common;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -269,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//package a.gautham.statusdownloader;
+//package a.status.downloader;
 //
 //import android.Manifest;
 //import android.annotation.SuppressLint;
@@ -308,8 +308,8 @@ public class MainActivity extends AppCompatActivity {
 //
 //import a.gautham.library.AppUpdater;
 //import a.gautham.library.helper.Display;
-//import a.gautham.statusdownloader.Adapter.PageAdapter;
-//import a.gautham.statusdownloader.Utils.Common;
+//import a.Adapter.statusdownloader.status.PageAdapter;
+//import a.Utils.statusdownloader.status.Common;
 //
 //public class MainActivity extends AppCompatActivity {
 //

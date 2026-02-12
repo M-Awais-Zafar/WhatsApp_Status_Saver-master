@@ -1,13 +1,13 @@
-package a.gautham.statusdownloader.Adapter;
+package a.status.downloader.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import a.gautham.statusdownloader.Fragments.ImageFragment;
-import a.gautham.statusdownloader.Fragments.SavedFilesFragment;
-import a.gautham.statusdownloader.Fragments.VideoFragment;
+import a.status.downloader.Fragments.ImageFragment;
+import a.status.downloader.Fragments.SavedFilesFragment;
+import a.status.downloader.Fragments.VideoFragment;
 
 public class PageAdapter extends FragmentPagerAdapter {
 

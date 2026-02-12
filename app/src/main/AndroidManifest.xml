@@ -26,10 +26,10 @@
             />
 
 
-        <activity android:name=".PrivacyPolicy" />
-        <activity android:name=".AboutUs" />
+        <activity android:name="a.status.downloader.PrivacyPolicy" />
+        <activity android:name="a.status.downloader.AboutUs" />
         <activity
-            android:name=".SplashActivity"
+            android:name="a.status.downloader.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,11 +37,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name="a.status.downloader.MainActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="a.gautham.statusdownloader.provider"
+            android:authorities="a.status.downloader.provider"
             android:exported="false"
             android:grantUriPermissions="true"
             tools:replace="android:authorities">

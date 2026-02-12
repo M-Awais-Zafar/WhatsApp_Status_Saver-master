@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader;
+package a.status.downloader;
 
 import org.junit.Test;
 

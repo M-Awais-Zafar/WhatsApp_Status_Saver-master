@@ -1,4 +1,4 @@
-package a.gautham.statusdownloader.Models;
+package a.status.downloader.Models;
 
 import androidx.documentfile.provider.DocumentFile;
 
