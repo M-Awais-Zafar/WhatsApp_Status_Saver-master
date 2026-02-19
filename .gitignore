@@ -12,3 +12,6 @@
 /captures
 .externalNativeBuild
 .cxx
+app/release/
+status_saver_key_store/
+.idea/
