@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="a.status.downloader.AboutUs">
+    tools:context="com.smartstatus.downloader.com.status.downloader.AboutUs">
 
     <LinearLayout
         android:layout_width="match_parent"
